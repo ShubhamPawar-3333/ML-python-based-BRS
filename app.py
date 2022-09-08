@@ -11,7 +11,7 @@ Books_BRS = pickle.load(open('Books_BRS.pkl','rb'))
 
 app = Flask(__name__, template_folder='template')
 
-@app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html')
 
