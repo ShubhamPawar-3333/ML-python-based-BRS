@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=DynaPuff:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header1">
+               
+        <nav>
+            <a>Top Rated Books</a>
+            <div class="nav-link2">
+                <ul>
+                    <li>
+                        <a href="{{url_for('index')}}">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container2">
+            {% for i in range(book_name | length)%}
+                <div class="row">
+                    <div class="column">
+                        <div class="card">
+                            <img src="{{ cover_image[i] }}">
+                        </div>
+                        <div class="content">
+                            <h2><b>{{book_name[i]}}</b></h2>
+                            <h3>{{author[i]}}</h3>
+                            <h5>{{genre[i]}}</h5>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>            
+    </section>
+</body>
+</html>

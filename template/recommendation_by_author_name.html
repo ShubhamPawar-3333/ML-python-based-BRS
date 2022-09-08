@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courgette&family=DynaPuff:wght@400;500;600;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header2">
+               
+        <nav>
+            <a>Recommendations Based on Author Name</a>
+            <div class="nav-link3">
+                <ul>
+                    <li>
+                        <a href="{{url_for('index')}}">Home</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <form action="/recommendation_by_author_name_list" method="post" class="search-bar">
+                <input name = "author_name" type="text" placeholder="Author Name" name="q">
+                <button type="submit"><img src="static/css/Image/Search.png" ></button>
+            </form>
+        </div>
+        {% if data_a %}
+            <h1>Recommended 10 books</h1>
+            {% for i in data_a %}
+                <div class="container3">
+                    <div class="column1">
+                        <div class="card">
+                            <img src="{{i[3]}}">
+                        </div>
+                    </div>
+                    <div class="column2">
+                        <div class="content">
+                            <h2><b>{{i[0]}}</b></h2>
+                            <h3>{{i[1]}}</h3>
+                            <h5>{{i[2]}}</h5>
+                        </div>
+                    </div>
+                </div> 
+            {% endfor %}  
+        {% endif %}
+                 
+    </section>
+</body>
+</html>

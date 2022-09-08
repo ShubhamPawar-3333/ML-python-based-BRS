@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommender System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <section class="header">
+               
+        <nav style="background-color:#945400b8">
+            <a href="index.html">My Book Recommender</a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="{{url_for('top_rated_books')}}">Top rated Books</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div class="welcome">
+            <h1>
+                <i> Books Recommender Site </i> 
+            </h1>
+            <p>
+                <i>
+                Welcomes you to the site that helps you find books that you might like.<br> If you are a book-worm and fond of reading, <br>this is definitely the place for you.<br><br> <b>You can have recommendations by:</b> 
+                </i>
+            </p>
+            <div class="parts">
+                <ul>
+                    <li><a href="{{url_for('recommendation_by_book_title')}}">Book-Title</a></li>
+                    <li><a href="{{url_for('recommendation_by_author_name')}}">Author-name</a></li>
+                    <li><a href="{{url_for('recommendation_based_on_genre')}}">Genre</a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
